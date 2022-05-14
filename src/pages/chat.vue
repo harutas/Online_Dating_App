@@ -19,7 +19,7 @@
           fab
           x-small
           dark
-          to="/Online_Dating_App"
+          to="/Online_Dating_App/"
         >
           <v-icon>mdi-arrow-u-left-top-bold</v-icon>
         </v-btn>
