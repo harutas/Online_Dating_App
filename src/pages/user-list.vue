@@ -18,6 +18,10 @@ export default {
 
   }),
 
+  created(){
+    this.$store.dispatch('fetchUsers', 'https://randomuser.me/api/?results=30&gender=female');
+  },
+
   computed : {
     getUsers(){
       return Object.values(this.$store.getters.getAllUsers);
