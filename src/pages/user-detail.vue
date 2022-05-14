@@ -3,7 +3,7 @@
     <div class="d-flex flex-column align-center mt-5">
       <v-img :src="userDetail.picture.large" class="col-5 col-sm-3" alt=""></v-img>
       <div class="d-flex justify-center">
-      <v-btn to="/" class="my-3 mr-3">Back</v-btn>
+      <v-btn to="/Online_Dating_App" class="my-3 mr-3">Back</v-btn>
       <v-btn :to="{name : 'chat', params : {id : $route.params.id} }" class="my-3" color="primary">Message</v-btn>
       </div>
       <div class="col-11 col-sm-9">
