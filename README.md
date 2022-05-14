@@ -1,5 +1,8 @@
 # online_dating_app
 
+## URL
+https://harutas.github.io/Online_Dating_App/
+
 ## Project setup
 ```
 npm install
