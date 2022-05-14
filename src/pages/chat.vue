@@ -19,7 +19,7 @@
           fab
           x-small
           dark
-          to="/Online_Dating_App/"
+          to="/"
         >
           <v-icon>mdi-arrow-u-left-top-bold</v-icon>
         </v-btn>
@@ -110,10 +110,6 @@ export default {
 </script>
 
 <style scoped>
-  .footer {
-    position: absolute;
-    bottom: 0;
-  }
   .pb-60px {
     padding-bottom: 60px;
   }

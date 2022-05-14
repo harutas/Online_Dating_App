@@ -25,7 +25,7 @@
         <v-list-item-group
         v-model="group"
         >
-          <v-list-item to="/Online_Dating_App">
+          <v-list-item to="/">
             <v-list-item-title>User List</v-list-item-title>
           </v-list-item>
 
