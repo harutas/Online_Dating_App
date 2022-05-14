@@ -10,5 +10,8 @@ new Vue({
   router,
   store,
   vuetify,
+  created(){
+    store.dispatch('fetchUsers', 'https://randomuser.me/api/?results=30&gender=female');
+  },
   render: h => h(App)
 }).$mount('#app')

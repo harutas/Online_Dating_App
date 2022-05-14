@@ -10,16 +10,16 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'User-list',
+    name: 'user-list',
     component: UserList
   },
   {
-    path: '/user/id',
+    path: '/user/:id',
     name: 'user-detail',
     component: UserDetail
   },
   {
-    path: '/user/id/chat',
+    path: '/user/:id/chat',
     name: 'chat',
     component: Chat
   },

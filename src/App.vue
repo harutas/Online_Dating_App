@@ -1,41 +1,41 @@
 <template>
   <v-app>
+    <!-- <v-system-bar color="deep-purple darken-3"></v-system-bar> -->
     <v-app-bar
       app
-      color="primary"
+      color="teal lighten-3"
       dark
+      fixed
     >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-toolbar-title>Online Dating App</v-toolbar-title>
 
       <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
+      
     </v-app-bar>
+    <v-navigation-drawer
+      v-model="drawer"
+      fixed
+      temporary
+    >
+      <v-list
+        nav
+        dense
+      >
+        <v-list-item-group
+        v-model="group"
+        >
+          <v-list-item to="/">
+            <v-list-item-title>User List</v-list-item-title>
+          </v-list-item>
+
+          <v-list-item to="/message-list">
+            <v-list-item-title>Message List</v-list-item-title>
+          </v-list-item>
+        </v-list-item-group>
+      </v-list>
+    </v-navigation-drawer>
+
 
     <v-main>
       <router-view/>
@@ -49,7 +49,20 @@ export default {
   name: 'App',
 
   data: () => ({
-    //
+    drawer: false,
+    group: null,
   }),
+
+  watch: {
+    group () {
+      this.drawer = false
+    },
+  },
+
+  methods : {
+    messageList(){
+      this.$router.push('message-list')
+    }
+  }
 };
 </script>
