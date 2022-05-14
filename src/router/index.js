@@ -9,7 +9,7 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/Online_Dating_App',
+    path: '/',
     name: 'user-list',
     component: UserList
   },

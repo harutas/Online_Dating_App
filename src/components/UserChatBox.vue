@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div>
     <div v-if="message.id=='myId'">
       <div class="d-flex justify-end">
         <div class="d-flex flex-column w-300px">
