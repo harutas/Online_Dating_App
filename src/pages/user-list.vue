@@ -1,17 +1,19 @@
 <template>
   <div class="d-flex justify-center">
-    <div class="d-flex flex-wrap col-12 col-md-8">
+    <Header :headerText="'Online Dating App'"/>
+    <v-row class="d-flex flex-wrap col-12 col-md-8">
       <user-list-card
         v-for="user in getUsers"
         :user="user"
         :key="user.login.id"
       ></user-list-card>
-    </div>
+    </v-row>
   </div>
 </template>
 
 <script>
 import UserListCard from '../components/UserListCard.vue'
+import Header from '../components/Header.vue'
 
 export default {
   data : () => ({
@@ -29,6 +31,7 @@ export default {
   },  
   
   components : {
+    Header,
     UserListCard
   }
 

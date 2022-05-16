@@ -2,9 +2,10 @@
   <div class="col-6 col-sm-4">
     <v-card
       elevation="2"
-      class="pa-2 ma-1"
+      class="pa-2 ma-1 hover"
+      @click="toUserDetail"
     >
-      <div @click="toUserDetail" >
+      <div>
         <v-img
           :src="user.picture.large"
           class="rounded-circle"
@@ -47,10 +48,9 @@ export default {
   },
 
   computed : {
-
     getFullName(){
       return this.user.name.first + " " + this.user.name.last;
-    },
+    }
 
   },
 
@@ -71,9 +71,13 @@ export default {
     font-size: 0.8rem;
   }
 
-  .ellipsis{
+  .ellipsis {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+
+  .hover {
+    cursor: pointer;
   }
 </style>

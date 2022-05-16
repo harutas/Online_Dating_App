@@ -1,5 +1,6 @@
 <template>
   <div :userDetail="userDetail">
+    <Header :headerText="userFullname"/>
     <div class="d-flex flex-column align-center mt-5">
       <v-img :src="userDetail.picture.large" class="col-5 col-sm-3" alt=""></v-img>
       <div class="d-flex justify-center">
@@ -49,22 +50,27 @@
 </template>
 
 <script>
+import Header from '../components/Header.vue'
 
 export default {
   data : () => ({
 
   }),
 
-  created(){
-    
-  },
-
-
   computed : {
     userDetail(){
       return this.$store.getters.getUserById(this.$route.params.id);
+    },
+    
+    userFullname(){
+      let user = this.$store.getters.getUserById(this.$route.params.id);
+      return user.name.first + " " + user.name.last;
     }
-  },  
+
+  },
+  components : {
+    Header
+  }
 
 }
 </script>

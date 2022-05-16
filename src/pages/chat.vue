@@ -1,9 +1,9 @@
 <template>
   <div>
+    <Header :headerText="userFullname" />
     <div class="pt-3 pb-60px px-5">
       <v-row class="d-flex justify-center overflow-auto">
         <v-col cols="12" sm="8">
-          <h1>{{userFullname}}</h1>
           <user-chat-box v-for="message in getMessages" :message="message" :key="message.count"></user-chat-box>
         </v-col>
       </v-row>
@@ -49,8 +49,10 @@
 </template>
 
 <script>
+import Header from '../components/Header.vue'
 import UserChatBox from '../components/UserChatBox.vue'
 import { getDateString } from '../model/index'
+
 
 export default {
   data : () => ({
@@ -103,6 +105,7 @@ export default {
   },
 
   components : {
+    Header,
     UserChatBox
   }
 
