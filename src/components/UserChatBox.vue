@@ -48,11 +48,8 @@ export default {
       return this.message.date;
     }
 
-  },
-
-  methods : {
-
   }
+
 }
 </script>
 

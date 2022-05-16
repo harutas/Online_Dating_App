@@ -37,13 +37,13 @@ export default {
     latestMessage(){
       let message = this.$store.getters['messages/getMessagesById'](this.id);
       return message[message.length-1];
-    },
+    }
 
   },
 
   methods : {
     toChat(){
-      this.$router.push({ name : 'chat', params : {id : this.id} })
+      this.$router.push({ name : 'chat', params : {id : this.id} });
     }
   }
 }

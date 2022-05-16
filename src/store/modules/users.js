@@ -16,11 +16,11 @@ export const users = {
 
   mutations : {
     setUsers(state, data){
-      let target = {}
+      let userData = {}
       for (let i = 0; i < data.length; i++){
-        target[data[i].login.uuid] = data[i];
+        userData[data[i].login.uuid] = data[i];
       }
-      state.users = Object.assign({}, state.users, target);
+      state.users = Object.assign(userData);
     }
   },
   
