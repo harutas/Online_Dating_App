@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header :headerText="userFullname" />
+    <Header :isDrawerMenu="isDrawerMenu" :headerText="userFullname" />
     <div class="pt-3 pb-60px px-5">
       <v-row class="d-flex justify-center overflow-auto">
         <v-col cols="12" sm="8">
@@ -14,15 +14,6 @@
     >
     <v-row class="d-flex justify-center">
       <v-col cols="12" class="d-flex align-center">
-        <v-btn
-          color="blue-grey"
-          fab
-          x-small
-          dark
-          to="/"
-        >
-          <v-icon>mdi-arrow-u-left-top-bold</v-icon>
-        </v-btn>
         <v-text-field
           v-model="content"
           placeholder="Send Message…"
@@ -57,7 +48,8 @@ import { getDateString } from '../model/index'
 export default {
   data : () => ({
     count : 0,
-    content : ""
+    content : "",
+    isDrawerMenu : false
   }),
 
   methods : {

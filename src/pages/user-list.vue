@@ -1,6 +1,6 @@
 <template>
   <div class="d-flex justify-center">
-    <Header :headerText="'Online Dating App'"/>
+    <Header :isDrawerMenu="isDrawerMenu" :headerText="'Online Dating App'"/>
     <v-row class="d-flex flex-wrap col-12 col-md-8">
       <user-list-card
         v-for="user in getUsers"
@@ -17,7 +17,7 @@ import Header from '../components/Header.vue'
 
 export default {
   data : () => ({
-
+    isDrawerMenu : true
   }),
 
   created(){
