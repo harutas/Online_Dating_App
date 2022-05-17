@@ -6,8 +6,15 @@
       dark
       fixed
     >
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-      <v-toolbar-title>{{headerText}}</v-toolbar-title>
+      <v-app-bar-nav-icon v-if="isDrawerMenu" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-btn
+        v-else
+        icon
+        to="/"
+      >
+        <v-icon>mdi-chevron-left</v-icon>
+      </v-btn>
+      <v-toolbar-title class="pl-1">{{headerText}}</v-toolbar-title>
     </v-app-bar>
     
     <v-navigation-drawer
@@ -39,7 +46,8 @@ export default {
   name : 'Header',
 
   props : {
-    headerText : String
+    headerText : String,
+    isDrawerMenu : Boolean
   },
 
   data: () => ({
