@@ -21,7 +21,9 @@ export default {
   }),
 
   created(){
-    this.$store.dispatch('fetchUsers', 'https://randomuser.me/api/?results=30&gender=female');
+    if (Object.keys(this.$store.getters.getAllUsers).length == 0){
+      this.$store.dispatch('fetchUsers', 'https://randomuser.me/api/?results=30&gender=female');
+    }
   },
 
   computed : {
