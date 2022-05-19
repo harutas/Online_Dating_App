@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header :isDrawerMenu="isDrawerMenu" :headerText="userFullname" />
-    <div class="pt-3 pb-60px px-5">
+    <div class="py-3 px-5">
       <v-row class="d-flex justify-center overflow-auto">
         <v-col cols="12" sm="8">
           <user-chat-box v-for="message in getMessages" :message="message" :key="message.count"></user-chat-box>
@@ -10,6 +10,7 @@
     </div>
 
     <v-footer
+      app
       fixed
     >
     <v-row class="d-flex justify-center">
@@ -96,9 +97,3 @@ export default {
 
 }
 </script>
-
-<style scoped>
-  .pb-60px {
-    padding-bottom: 60px;
-  }
-</style>
