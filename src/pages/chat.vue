@@ -60,30 +60,23 @@ export default {
       }
       let newMessages = {
         id : this.$route.params.id,
-        messages : []
-      }
-      let myMessage = {
-        count : this.count,
+        messages : {
+          count : this.count,
           id : "myId",
           content : this.content,
           date : getDateString()
         }
+      }
       this.count++;
-
-      let partnerMessage = {
-          count : this.count, 
-          id : this.$route.params.id,
-          content : "Hello~~",
-          date : getDateString()
-        }
-      this.count++;
-
-      newMessages.messages.push(myMessage, partnerMessage);
       this.$store.commit('messages/setMessages', newMessages);
+      this.$store.dispatch('messages/fetchMessage', newMessages);
       this.content = "";
+
+
+      this.count++;
+      // this.$store.commit('messages/setMessages', partnerMessage);
     }
   },
-
 
   computed : {
     getMessages(){
