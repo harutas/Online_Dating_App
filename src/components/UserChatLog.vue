@@ -1,6 +1,6 @@
 <template>
     <div>
-      <div @click="toChat" :latestMessage="latestMessage" class="d-flex justify-start align-center mt-5 hover">
+      <div @click="toChat" :latestMessage="latestMessage" class="d-flex justify-start align-center mt-4 hover">
         <v-avatar>
           <img :src="getUser.picture.thumbnail" :alt="getUser.name.first">
         </v-avatar>
@@ -10,7 +10,6 @@
           <p class="font-size0q8rem ml-3">{{latestMessage.date}}</p>
         </div>
       </div>
-      <v-divider inset></v-divider>
     </div>
 </template>
 

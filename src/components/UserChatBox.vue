@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div v-if="message.id=='myId'">
-      <div class="d-flex justify-end">
+    <div v-if="message.isMyChat==true">
+      <div class="d-flex justify-end my-3">
         <div class="d-flex flex-column w-300px">
           <v-card elevation="5" class="rounded-lg green accent-3 pa-2 mb-2">
             <p>{{messageContent}}</p>
@@ -11,7 +11,7 @@
       </div>
     </div>
     <div v-else>
-      <div class="d-flex justify-start align-center">
+      <div class="d-flex justify-start align-center my-3">
         <v-avatar>
           <img :src="getUser.picture.thumbnail" :alt="getUser.name.first">
         </v-avatar>

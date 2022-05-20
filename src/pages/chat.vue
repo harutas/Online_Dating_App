@@ -1,13 +1,11 @@
 <template>
-  <div>
+  <v-container>
     <Header :isDrawerMenu="isDrawerMenu" :headerText="userFullname" />
-    <div class="py-3 px-5">
-      <v-row class="d-flex justify-center overflow-auto">
-        <v-col cols="12" sm="8">
-          <user-chat-box v-for="message in getMessages" :message="message" :key="message.count"></user-chat-box>
-        </v-col>
-      </v-row>
-    </div>
+    <v-row class="d-flex justify-center overflow-auto">
+      <v-col cols="12" sm="8" class="pb-0">
+        <user-chat-box v-for="message in getMessages" :message="message" :key="message.count"></user-chat-box>
+      </v-col>
+    </v-row>
 
     <v-footer
       app
@@ -37,13 +35,13 @@
       </v-col>
     </v-row>
     </v-footer>
-  </div>
+  </v-container>
 </template>
 
 <script>
 import Header from '../components/Header.vue'
 import UserChatBox from '../components/UserChatBox.vue'
-import { getDateString } from '../model/index'
+import { Chat } from '../model/index'
 
 
 export default {
@@ -59,23 +57,15 @@ export default {
         alert("Please input Message.");
         return ;
       }
-      let newMessages = {
-        id : this.$route.params.id,
-        messages : {
-          count : this.count,
-          id : "myId",
-          content : this.content,
-          date : getDateString()
-        }
-      }
-      this.count++;
-      this.$store.commit('messages/setMessages', newMessages);
-      this.$store.dispatch('messages/fetchMessage', newMessages);
+      let newMessage = new Chat(this.count, this.$route.params.id, this.content, true);
+      newMessage.date = Chat.getDateString();
+
+      this.$store.commit('messages/setMessages', newMessage);
+
+      this.$store.dispatch('messages/replyMessage', newMessage);
+      
       this.content = "";
-
-
-      this.count++;
-      // this.$store.commit('messages/setMessages', partnerMessage);
+      this.count += 2;
     }
   },
 

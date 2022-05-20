@@ -14,7 +14,17 @@
       >
         <v-icon>mdi-chevron-left</v-icon>
       </v-btn>
-      <v-toolbar-title class="pl-1">{{headerText}}</v-toolbar-title>
+      <v-toolbar-title class="pl-2">{{headerText}}</v-toolbar-title>
+
+      <v-spacer></v-spacer>
+
+      <v-btn
+        icon
+        to="/message-list"
+      >
+        <v-icon>mdi-account-multiple</v-icon>
+      </v-btn>
+
     </v-app-bar>
     
     <v-navigation-drawer
