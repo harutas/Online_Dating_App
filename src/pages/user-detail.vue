@@ -1,5 +1,5 @@
 <template>
-  <div :userDetail="userDetail">
+  <v-container :userDetail="userDetail">
     <Header :headerText="userFullname"/>
     <div class="d-flex flex-column align-center mt-5">
       <v-img :src="userDetail.picture.large" class="col-5 col-sm-3" alt=""></v-img>
@@ -44,7 +44,7 @@
       </v-simple-table>
       </div>
     </div>
-  </div>
+  </v-container>
   
 </template>
 

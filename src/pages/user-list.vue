@@ -22,7 +22,7 @@ export default {
 
   created(){
     if (Object.keys(this.$store.getters.getAllUsers).length == 0){
-      this.$store.dispatch('fetchUsers', 'https://randomuser.me/api/?results=30&gender=female');
+      this.$store.dispatch('fetchUsers', 'https://randomuser.me/api/?results=50');
     }
   },
 
