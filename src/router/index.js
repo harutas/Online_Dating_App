@@ -4,6 +4,7 @@ import UserList from '../pages/user-list.vue'
 import UserDetail from '../pages/user-detail.vue'
 import Chat from '../pages/chat.vue'
 import MessageList from '../pages/message-list.vue'
+import Setting from '../pages/setting.vue'
 
 Vue.use(VueRouter)
 
@@ -27,6 +28,11 @@ const routes = [
     path: '/message-list',
     name: 'message-list',
     component: MessageList
+  },
+  {
+    path: '/setting',
+    name: 'setting',
+    component: Setting
   },
 ]
 

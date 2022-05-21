@@ -61,7 +61,6 @@ export default {
       newMessage.date = Chat.getDateString();
 
       this.$store.commit('messages/setMessages', newMessage);
-
       this.$store.dispatch('messages/replyMessage', newMessage);
       
       this.content = "";

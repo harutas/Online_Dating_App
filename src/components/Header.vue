@@ -45,6 +45,10 @@
           <v-list-item to="/message-list">
             <v-list-item-title>Message List</v-list-item-title>
           </v-list-item>
+
+          <v-list-item to="/setting">
+            <v-list-item-title>Setting</v-list-item-title>
+          </v-list-item>
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
