@@ -12,16 +12,15 @@ export const messages = {
     },
     mutations : {
         setMessages(state, payload){
-            let target = state.messages;
+            let currMessages = state.messages;
             
-            if (payload.id in target){
-                    target[payload.id].push(payload);
-            }
-            else {
-                target[payload.id] = [payload];
-            }
+            if (payload.id in currMessages) currMessages[payload.id].push(payload);
+            else currMessages[payload.id] = [payload];
 
-            state.messages = Object.assign({}, target);
+            state.messages = Object.assign({}, currMessages);
+        },
+        resetMessages(state){
+            state.messages = {};
         }
     },
     actions : {
